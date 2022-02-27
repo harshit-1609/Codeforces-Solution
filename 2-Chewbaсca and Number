@@ -1,0 +1,33 @@
+import java.util.*;
+public class lfs
+{
+    public static int digit(char t)
+    {
+       return '9'-t+48; 
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        char arr[]=new char[100];
+        char y;
+        arr=s.toCharArray();
+        for(int i=0;i<s.length();i++)
+        {
+            if(i==0)
+            {
+                if(arr[i]=='9')
+                {
+                    continue;
+                }
+            }
+            y=(char)digit(arr[i]);
+            if(arr[i]>y)
+            {
+              arr[i]=y;  
+            }
+            
+        }
+        System.out.println(arr);
+    }
+}
