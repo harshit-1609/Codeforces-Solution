@@ -1,0 +1,23 @@
+import java.util.*;
+public class lfs{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        while(sc.hasNext())
+        {
+        int k=sc.nextInt();
+        int l=sc.nextInt();
+        int c=sc.nextInt();
+        int d=sc.nextInt();
+        int p=sc.nextInt();
+        int nl=sc.nextInt();
+        int np=sc.nextInt();
+        int x=(k*l)/nl;
+        int y=c*d;
+        int z=p/np;
+        int ans=Math.min(Math.min(x,y),z)/n;
+        System.out.println(ans);
+        
+    }}
+}
