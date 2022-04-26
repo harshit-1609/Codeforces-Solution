@@ -1,0 +1,39 @@
+import java.util.*;
+public class lfs
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0)
+        {
+            int n=sc.nextInt();
+            ArrayList<Integer> arr=new ArrayList<>();
+            for(int i=1;i<=n;i++)
+            {
+                arr.add(i);
+            }
+            solve(arr,n);
+        }
+    }
+    public static void solve(List<Integer> arr,int n)
+    {
+        PriorityQueue<Integer> pq=new PriorityQueue<>(Collections.reverseOrder());
+        pq.addAll(arr);
+        int k=n-1;
+        StringBuilder sb=new StringBuilder();
+        while(!pq.isEmpty() && pq.size()>1 && k>0)
+        {
+            int a=pq.poll();
+            if(!pq.isEmpty())
+            {
+                int b=pq.poll();
+                int mid=(a+b)%2==0?(a+b)/2:(a+b+1)/2;
+                pq.offer(mid);
+                sb.append(a+" "+b+"\n");
+                k--;
+            }
+        }
+        System.out.println(pq.poll()+"\n"+sb.toString());
+    }
+}
