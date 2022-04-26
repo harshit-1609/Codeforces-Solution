@@ -1,0 +1,36 @@
+import java.util.*;
+public class lfs
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String s1;
+        boolean fg=false;
+        char ch=s.charAt(0);
+        char sh=s.charAt(1);
+        for(int i=0;i<5;i++)
+        {
+            s1=sc.next();
+           char str1[]=s1.toCharArray();
+        
+        
+     
+            char mh=str1[0];
+            char kh=str1[1];
+            if((mh == ch) || (kh==sh))
+            {
+                fg=true;
+                
+            }
+        }
+        if(fg==true)
+        {
+            System.out.println("YES");
+        }
+        else
+        {
+             System.out.println("NO");
+        }
+    }
+}
