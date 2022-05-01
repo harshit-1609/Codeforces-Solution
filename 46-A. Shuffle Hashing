@@ -1,0 +1,56 @@
+import java.util.*;
+public class lfs
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0)
+        {
+            char ar[]=sc.next().toCharArray();
+            char br[]=sc.next().toCharArray();
+            int n1=ar.length;
+            int n2=br.length;
+            ArrayList<Character> list=new ArrayList<>();
+            for(int i=0;i<n1;i++)
+            {
+                list.add(ar[i]);
+            }
+            Collections.sort(list);
+            boolean flag=false;
+            int count=0;
+            for(int i=0;i<n2-n1+1;i++)
+            {
+                ArrayList<Character> ans=new ArrayList<>();
+                for(int j=i;j<n1+i;j++)
+                {
+                    ans.add(br[j]);
+                }
+                Collections.sort(ans);
+                count=0;
+                for(int k=0;k<n1;k++)
+                {
+                    if(list.get(k)==ans.get(k))
+                    {
+                        count+=1;
+                        
+                    }
+                }
+                if(count==n1)
+                {
+                    flag=true;
+                    break;
+                }
+            }
+                if(flag==true)
+                {
+                    System.out.println("YES");
+                }
+                else
+                {
+                    System.out.println("NO");
+                }
+            }
+        }
+    }
+
