@@ -1,0 +1,29 @@
+import java.util.*;
+ public class lfs
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        String s=sc.next();
+        String p="";
+        int k=3;
+        if(n>=2)
+        {
+            p=p+s.charAt(0);
+            p=p+s.charAt(1);
+        }
+        else
+        {
+            p=p+s.charAt(0);
+        }
+        for(int i=3;i<n;)
+        {
+            p=p+s.charAt(i);
+            i+=k;
+            k++;
+        }
+        System.out.println(p);
+    }
+}
